@@ -10,10 +10,6 @@ import GentsCheckOut from './src/components/othercomponents/GentsCheckOut/GentsC
 import GentsOrderDetails from './src/components/othercomponents/GentsProducts/GentsOrderDetails';
 import LadiesOrderDetails from './src/components/othercomponents/LadiesProducts/LadiesOrderDetails';
 import LadiesCheckOut from './src/components/othercomponents/LadiesCheckOut/LadiesCheckOut';
-import AdminBottomNavigator from './src/components/navigation/AdminNavigation/AdminBottomNavigator';
-import LadiesOrderInfo from './src/components/screens/AdminModule/LadiesOrderInfo/LadiesOrderInfo';
-import GentsOrderInfo from './src/components/screens/AdminModule/GentsOrderInfo/GentsOrderInfo';
-import UpdateProductInfo from './src/components/screens/AdminModule/UpdateProductInfo';
 
 const Stack = createNativeStackNavigator();
 
@@ -92,59 +88,7 @@ const App = () => {
               backgroundColor: '#539165',
             },
           }}
-        />
-
-        <Stack.Screen name="DashBoard" component={AdminBottomNavigator} />
-        <Stack.Screen
-          name="LadiesOrderInfo"
-          component={LadiesOrderInfo}
-          options={{
-            headerShown: true,
-            headerTitle: 'Order Details',
-            headerTitleStyle: {
-              color: '#fff',
-              fontSize: 20,
-              fontFamily: 'Montserrat-Bold',
-            },
-            headerStyle: {
-              backgroundColor: '#00bcd4',
-            },
-          }}
-        />
-
-        <Stack.Screen
-          name="GentsOrderInfo"
-          component={GentsOrderInfo}
-          options={{
-            headerShown: true,
-            headerTitle: 'Order Details',
-            headerTitleStyle: {
-              color: '#fff',
-              fontSize: 20,
-              fontFamily: 'Montserrat-Bold',
-            },
-            headerStyle: {
-              backgroundColor: '#00bcd4',
-            },
-          }}
-        />
-
-        <Stack.Screen
-          name="UpdateProductInfo"
-          component={UpdateProductInfo}
-          options={{
-            headerShown: true,
-            headerTitle: 'Product Update',
-            headerTitleStyle: {
-              color: '#fff',
-              fontSize: 20,
-              fontFamily: 'Montserrat-Bold',
-            },
-            headerStyle: {
-              backgroundColor: '#00bcd4',
-            },
-          }}
-        />
+        />        
       </Stack.Navigator>
     </NavigationContainer>
   );
