@@ -13,13 +13,13 @@ const Splash = () => {
   }, []);
 
   return (
-    <View className="flex-1 justify-center left-3">
+    <View className="flex-1 justify-center">
       <View className="items-center">
         <Animatable.Image
           source={require('../../assets/logo.png')}
           animation={'fadeIn'}
           duration={1500}
-          className="w-[142px] h-[140px] object-contain shadow-black mb-5"
+          className="w-[230px] h-28 object-contain shadow-black mb-5"
         />
       </View>
     </View>
