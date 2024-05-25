@@ -86,7 +86,9 @@ const WomenProducts = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text className="text-xl" style={{fontFamily: 'Montserrat-SemiBold'}}>
+          <Text
+            className="text-xl text-dark"
+            style={{fontFamily: 'Montserrat-SemiBold'}}>
             No Ladies Products
           </Text>
         </View>

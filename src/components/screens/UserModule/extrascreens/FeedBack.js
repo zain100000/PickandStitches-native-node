@@ -9,7 +9,6 @@ import {
   Animated,
   Easing,
   StyleSheet,
-  ImageBackground,
   ActivityIndicator,
   RefreshControl,
 } from 'react-native';
@@ -103,123 +102,119 @@ const FeedBack = () => {
   };
 
   return (
-    <ImageBackground
-      source={require('../../../../assets/feedback_bg.jpg')}
-      className="flex-1 bg-cover object-cover">
-      <SafeAreaView className="flex-1">
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          className="flex-1"
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
-          }>
-          <Animated.View
-            style={[
-              styles.container,
-              {transform: [{translateY: formTranslateY}]},
-            ]}>
-            {/* Form Start */}
+    <SafeAreaView className="flex-1">
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        className="flex-1"
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }>
+        <Animated.View
+          style={[
+            styles.container,
+            {transform: [{translateY: formTranslateY}]},
+          ]}>
+          {/* Form Start */}
 
-            <View className="flex-1 inset-y-0 mt-16 px-3">
-              <View className="flex-row mb-5 border-b-2 border-b-white">
-                <View className="mt-3">
-                  <AntDesign name="user" size={25} color={'#fff'} />
-                </View>
-                <TextInput
-                  className="text-sm px-5 text-white w-full"
-                  placeholder="Your Name"
-                  placeholderTextColor={'#fff'}
-                  value={fullname}
-                  onChangeText={setFullName}
-                  ref={fullnameRef}
-                  style={{fontFamily: 'Montserrat-SemiBold'}}
-                />
+          <View className="flex-1 inset-y-0 mt-16 px-3">
+            <View className="flex-row mb-5 border-b-2 border-b-black">
+              <View className="mt-3">
+                <AntDesign name="user" size={25} color={'#000'} />
               </View>
-
-              <View className="flex-row mb-5 border-b-2 border-b-white">
-                <View className="mt-3">
-                  <AntDesign name="mail" size={25} color={'#fff'} />
-                </View>
-                <TextInput
-                  className="text-sm px-5 text-white w-full"
-                  keyboardType="email-address"
-                  placeholder="Your Email"
-                  placeholderTextColor={'#fff'}
-                  value={email}
-                  onChangeText={setEmail}
-                  ref={emailRef}
-                  style={{fontFamily: 'Montserrat-SemiBold'}}
-                />
-              </View>
-
-              <View className="flex-row mb-5 border-b-2 border-b-white">
-                <View className="mt-3">
-                  <AntDesign name="mobile1" size={25} color={'#fff'} />
-                </View>
-                <TextInput
-                  className="text-sm px-5 text-white w-full"
-                  keyboardType="number-pad"
-                  placeholder="Your Phone"
-                  placeholderTextColor={'#fff'}
-                  value={mobile}
-                  onChangeText={setMobile}
-                  ref={mobileRef}
-                  style={{fontFamily: 'Montserrat-SemiBold'}}
-                />
-              </View>
-
-              <View className="flex-row mb-5 border-b-2 border-b-white">
-                <View className="mt-3">
-                  <AntDesign name="book" size={25} color={'#fff'} />
-                </View>
-                <TextInput
-                  className="text-sm px-5 text-white w-full"
-                  placeholder="Subject"
-                  placeholderTextColor={'#fff'}
-                  value={subject}
-                  onChangeText={setSubject}
-                  ref={subjectRef}
-                  style={{fontFamily: 'Montserrat-SemiBold'}}
-                />
-              </View>
-
-              <View className="flex-row mb-5 border-b-2 border-b-white">
-                <View className="justify-center">
-                  <AntDesign name="message1" size={25} color={'#fff'} />
-                </View>
-                <TextInput
-                  className="text-sm px-5 text-light border-b-2 border-b-black w-full"
-                  placeholder="Message"
-                  placeholderTextColor="white"
-                  multiline={true}
-                  numberOfLines={6}
-                  value={message}
-                  onChangeText={setMessage}
-                  ref={messageRef}
-                  style={{fontFamily: 'Montserrat-SemiBold'}}
-                />
-              </View>
-
-              {/* Button Start */}
-              <TouchableOpacity
-                className="justify-center items-center rounded-lg p-3 mt-5 mb-5 bg-primary"
-                onPress={handleFeedBack}>
-                {loading ? (
-                  <ActivityIndicator color={'#fff'} /> // Show loader while loading
-                ) : (
-                  <Text
-                    className="text-white text-xl"
-                    style={{fontFamily: 'Montserrat-SemiBold'}}>
-                    Submit
-                  </Text> // Show login text when not loading
-                )}
-              </TouchableOpacity>
-              {/* Button End */}
+              <TextInput
+                className="text-sm px-5 text-black w-full"
+                placeholder="Your Name"
+                placeholderTextColor={'#000'}
+                value={fullname}
+                onChangeText={setFullName}
+                ref={fullnameRef}
+                style={{fontFamily: 'Montserrat-SemiBold'}}
+              />
             </View>
-          </Animated.View>
-        </ScrollView>
-      </SafeAreaView>
-    </ImageBackground>
+
+            <View className="flex-row mb-5 border-b-2 border-b-black">
+              <View className="mt-3">
+                <AntDesign name="mail" size={25} color={'#000'} />
+              </View>
+              <TextInput
+                className="text-sm px-5 text-black w-full"
+                keyboardType="email-address"
+                placeholder="Your Email"
+                placeholderTextColor={'#000'}
+                value={email}
+                onChangeText={setEmail}
+                ref={emailRef}
+                style={{fontFamily: 'Montserrat-SemiBold'}}
+              />
+            </View>
+
+            <View className="flex-row mb-5 border-b-2 border-b-black">
+              <View className="mt-3">
+                <AntDesign name="mobile1" size={25} color={'#000'} />
+              </View>
+              <TextInput
+                className="text-sm px-5 text-black w-full"
+                keyboardType="number-pad"
+                placeholder="Your Phone"
+                placeholderTextColor={'#000'}
+                value={mobile}
+                onChangeText={setMobile}
+                ref={mobileRef}
+                style={{fontFamily: 'Montserrat-SemiBold'}}
+              />
+            </View>
+
+            <View className="flex-row mb-5 border-b-2 border-b-black">
+              <View className="mt-3">
+                <AntDesign name="book" size={25} color={'#000'} />
+              </View>
+              <TextInput
+                className="text-sm px-5 text-black w-full"
+                placeholder="Subject"
+                placeholderTextColor={'#000'}
+                value={subject}
+                onChangeText={setSubject}
+                ref={subjectRef}
+                style={{fontFamily: 'Montserrat-SemiBold'}}
+              />
+            </View>
+
+            <View className="flex-row mb-5 border-b-2 border-b-black">
+              <View className="justify-center">
+                <AntDesign name="message1" size={25} color={'#000'} />
+              </View>
+              <TextInput
+                className="text-sm px-5 text-dark border-b-2 border-b-black w-full"
+                placeholder="Message"
+                placeholderTextColor="black"
+                multiline={true}
+                numberOfLines={6}
+                value={message}
+                onChangeText={setMessage}
+                ref={messageRef}
+                style={{fontFamily: 'Montserrat-SemiBold'}}
+              />
+            </View>
+
+            {/* Button Start */}
+            <TouchableOpacity
+              className="justify-center items-center rounded-lg p-3 mt-5 mb-5 bg-primary"
+              onPress={handleFeedBack}>
+              {loading ? (
+                <ActivityIndicator color={'#000'} /> // Show loader while loading
+              ) : (
+                <Text
+                  className="text-black text-xl"
+                  style={{fontFamily: 'Montserrat-SemiBold'}}>
+                  Submit
+                </Text> // Show login text when not loading
+              )}
+            </TouchableOpacity>
+            {/* Button End */}
+          </View>
+        </Animated.View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
